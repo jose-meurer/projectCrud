@@ -41,6 +41,7 @@ public class ClientService {
 	public ClientDTO insert(ClientDTO clientDto) {
 		Client entity = new Client();
 		copyDtoToEntity(clientDto, entity);
+		entity = clientRepository.save(entity);
 		return new ClientDTO(entity);
 	}
 	
